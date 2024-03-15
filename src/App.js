@@ -1,21 +1,22 @@
-import './App.css';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
-import DisplayData from './DisplayData'
+import logo from "./logo.svg";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Recipe from "./components/Recipe";
+import CreateRecipe from './components/CreateRecipe'
+
 
 function App() {
 
-  const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    uri: "https://graphql-backend-demo.onrender.com/graphql"
-  })
-  return (
-    <ApolloProvider client={client}>
-      <div className="App">
-      <DisplayData></DisplayData>
 
-      </div>
-    </ApolloProvider>
-    
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/recipe/:id" element={<Recipe />} />
+        <Route path="/create-recipe" element={<CreateRecipe />} />
+      </Routes>
+    </div>
   );
 }
 
