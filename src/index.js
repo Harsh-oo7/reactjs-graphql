@@ -9,7 +9,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: "http://localhost:4000/graphql",
+  uri: "https://graphql-backend-demo.onrender.com/graphql",
 });
 
 root.render(
